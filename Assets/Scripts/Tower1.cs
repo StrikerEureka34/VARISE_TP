@@ -16,7 +16,7 @@ public class Tower1 : TowerBase
         {
             Vector3 targetPos = currentEnemyTarget.transform.position - transform.position;
             float angle = Vector3.SignedAngle(transform.up, targetPos, transform.forward);
-            transform.Rotate(0f, 0f, angle/20);
+            transform.Rotate(0f, 0f, (angle * -1) / 70);
         }
     }
     public void Shoot()
