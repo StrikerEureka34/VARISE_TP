@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -10,6 +10,11 @@ public class Health : MonoBehaviour
     public int points = 0; 
 
     [SerializeField] PlayerType playerType;
+
+    public Image frontHealthBar;
+    public Image backHealthBar;
+    private int chipSpeed;
+    private float lerpTimer;
 
     public enum PlayerType
     {
@@ -22,9 +27,35 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    public void UpdateHealthUI()
+    {
+        float fillF = frontHealthBar.fillAmount;
+        float fillB = backHealthBar.fillAmount;
+        float hFraction = currentHealth / maxHealth;
+        if (fillB > hFraction)
+        {
+            frontHealthBar.fillAmount = hFraction;
+            backHealthBar.color = Color.red;
+            lerpTimer += Time.deltaTime;
+            float percentComplete = lerpTimer / chipSpeed;
+            percentComplete = percentComplete * percentComplete;
+            backHealthBar.fillAmount = Mathf.Lerp(fillB, lerpTimer, percentComplete);
+        }
+        if (fillF < hFraction)
+        {
+            backHealthBar.fillAmount = hFraction;
+            backHealthBar.color = Color.green;
+            lerpTimer += Time.deltaTime;
+            float percentComplete = lerpTimer / chipSpeed;
+            percentComplete = percentComplete * percentComplete;
+            frontHealthBar.fillAmount = Mathf.Lerp(fillF, backHealthBar.fillAmount, percentComplete);
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
+        UpdateHealthUI();
 
         if (currentHealth <= 0)
         {

@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
                 {
                     if (hitInfo.transform.gameObject.tag == "enemy")
                     {
-                        //Debug.DrawRay(ray.origin, ray.direction * sightDistance, Color.red);
+                        Debug.DrawRay(ray.origin, ray.direction * sightDistance, Color.red);
                         return true;
                     }
                 }
