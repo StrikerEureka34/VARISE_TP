@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     int damage = 10;
+
     public void OnCollisionEnter(Collision collision)
     {
         Transform hitTransform = collision.transform;

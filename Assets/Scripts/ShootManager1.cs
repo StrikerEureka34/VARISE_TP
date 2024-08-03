@@ -6,12 +6,26 @@ public class ShootManager1 : TowerBase
 {
     public void Update()
     {
-        enemy.shotTimer += Time.deltaTime;
-        if (enemy.shotTimer > .5f)
+        enemy.shotTimer1 += Time.deltaTime;
+        if (enemy.shotTimer1 > .5f)
         {
-            if (enemy.CanBeSeen())
+            if (enemy.CanBeSeen1())
             {
-                tower1.Shoot();
+                {
+                    tower1.Shoot1();
+                    enemy.shotTimer1 = 0;
+                }
+            }
+        }
+        enemy.shotTimer2 += Time.deltaTime;
+        if (enemy.shotTimer2 > .5f)
+        {
+            if (enemy.CanBeSeen2())
+            {
+                {
+                    tower1.Shoot2();
+                    enemy.shotTimer2 = 0;
+                }
             }
         }
     }

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     int maxHealth = 100;
-    public int currentHealth;
+    public float currentHealth;
     public int points = 0; 
 
     [SerializeField] PlayerType playerType;
@@ -52,7 +53,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth = currentHealth - damage;
         UpdateHealthUI();
@@ -67,7 +68,7 @@ public class Health : MonoBehaviour
     {
         if (playerType == PlayerType.Base)
         {
-            // Game over
+            SceneManager.LoadScene(0);
         } 
         else if (playerType == PlayerType.Enemy) 
         {

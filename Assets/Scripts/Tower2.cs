@@ -8,6 +8,7 @@ public class Tower2 : TowerBase
 {
     public GameObject bulletSpawn2;
     public GameObject currentEnemyTarget;
+    public GameObject Base;
 
     [SerializeField]
     private LineRenderer lineRenderer;
@@ -40,30 +41,30 @@ public class Tower2 : TowerBase
         laserDirection = currentEnemyTarget.transform.position - bulletSpawn2.transform.position;
         ray = new Ray(bulletSpawn2.transform.position, laserDirection);
         hitInfo = new RaycastHit();
-        if(Physics.Raycast(ray, out hitInfo, laserDistance)) 
+        //Debug.DrawRay(ray.origin, ray.direction * laserDistance, Color.red);
+        if (Physics.Raycast(ray, out hitInfo, laserDistance)) 
         {
-            lineRenderer.SetPosition(1, bulletSpawn2.transform.position);
-            lineRenderer.SetPosition(0, hitInfo.point);
+            lineRenderer.SetPosition(0, bulletSpawn2.transform.position);
+            lineRenderer.SetPosition(1, hitInfo.point);
         }
         else
         {
-            lineRenderer.SetPosition(1, bulletSpawn2.transform.position);
-            lineRenderer.SetPosition(0, bulletSpawn2.transform.position + bulletSpawn2.transform.position * laserDistance);
+            lineRenderer.SetPosition(0, bulletSpawn2.transform.position);
+            lineRenderer.SetPosition(1, bulletSpawn2.transform.position + bulletSpawn2.transform.position * laserDistance);
         }
+        if (Physics.Raycast(ray, out hitInfo, laserDistance))
+        {
+            health.TakeDamage(.5f);
+        }    
     }
-    /*private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(ray.origin, ray.direction * laserDistance);
-
-        Gizmos.color= Color.blue;
-        Gizmos.DrawWireSphere(hitInfo.point, 2f);
-    }*/
     public void ShootBase()
     {
-        GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullet02") as GameObject, enemy.transform.position, enemy.transform.rotation);
-        Vector3 shootDirection = enemy.transform.forward;
-        bullet.GetComponent<Rigidbody>().velocity = shootDirection * 20;
-        enemy.shotTimer = 0;
+        //Debug.Log("In shootBase");
+        GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullet02") as GameObject, enemy.transform.position, Quaternion.identity);
+        Vector3 shootDirection = Base.transform.position - enemy.transform.position;
+        Ray ray = new Ray(enemy.transform.position, shootDirection);
+        Debug.DrawRay(ray.origin, ray.direction * 10, Color.gray);
+        bullet.GetComponent<Rigidbody>().velocity = shootDirection * 3;
+        enemy.shotTimer1 = 0;
     }
 }
