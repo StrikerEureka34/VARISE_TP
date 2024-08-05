@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    int damage = 10;
+    int damage = 7;
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         if (hitTransform.TryGetComponent(out Health health))
         {
             health.TakeDamage(damage);
+            Destroy(gameObject);
         }
-        //Destroy(gameObject);
     }
 }

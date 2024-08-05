@@ -9,6 +9,7 @@ public class Tower2 : TowerBase
     public GameObject bulletSpawn2;
     public GameObject currentEnemyTarget;
     public GameObject Base;
+    public AudioSource laser;
 
     [SerializeField]
     private LineRenderer lineRenderer;
@@ -55,6 +56,7 @@ public class Tower2 : TowerBase
         if (Physics.Raycast(ray, out hitInfo, laserDistance))
         {
             health.TakeDamage(.5f);
+            laser.Play();
         }    
     }
     public void ShootBase()
@@ -62,8 +64,8 @@ public class Tower2 : TowerBase
         //Debug.Log("In shootBase");
         GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullet02") as GameObject, enemy.transform.position, Quaternion.identity);
         Vector3 shootDirection = Base.transform.position - enemy.transform.position;
-        Ray ray = new Ray(enemy.transform.position, shootDirection);
-        Debug.DrawRay(ray.origin, ray.direction * 10, Color.gray);
+        /*Ray ray = new Ray(enemy.transform.position, shootDirection);
+        Debug.DrawRay(ray.origin, ray.direction * 10, Color.gray);*/
         bullet.GetComponent<Rigidbody>().velocity = shootDirection * 3;
         enemy.shotTimer1 = 0;
     }

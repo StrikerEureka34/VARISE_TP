@@ -28,22 +28,30 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    public void Update()
+    {
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+        //UpdateHealthUI();
+    }
     public void UpdateHealthUI()
     {
         float fillF = frontHealthBar.fillAmount;
         float fillB = backHealthBar.fillAmount;
-        float hFraction = currentHealth / maxHealth;
+        float hFraction = currentHealth/maxHealth;
         if (fillB > hFraction)
         {
+            //Debug.Log("fillB");
             frontHealthBar.fillAmount = hFraction;
+            //Debug.Log(frontHealthBar.fillAmount);
             backHealthBar.color = Color.red;
             lerpTimer += Time.deltaTime;
-            float percentComplete = lerpTimer / chipSpeed;
-            percentComplete = percentComplete * percentComplete;
+            float percentComplete = lerpTimer/chipSpeed;
+            //percentComplete = percentComplete * percentComplete;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, lerpTimer, percentComplete);
         }
         if (fillF < hFraction)
         {
+           // Debug.Log("fillF");
             backHealthBar.fillAmount = hFraction;
             backHealthBar.color = Color.green;
             lerpTimer += Time.deltaTime;
