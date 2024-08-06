@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIInterface : MonoBehaviour {
 
@@ -58,10 +59,11 @@ public class UIInterface : MonoBehaviour {
             
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+            if (EventSystem.current.IsPointerOverGameObject()) return;
             if (Physics.Raycast(ray, out hit)
                 && hit.collider.gameObject.CompareTag("turret"))
             {
+                turretMenu.transform.position = Input.mousePosition;
                 turretMenu.SetActive(true);
             }
         } else if (focusObj && Input.GetMouseButton(0)) {

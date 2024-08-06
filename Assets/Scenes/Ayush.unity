@@ -585,6 +585,7 @@ MonoBehaviour:
   tower1: {fileID: 2003419341}
   tower2: {fileID: 0}
   health: {fileID: 0}
+  shoot: {fileID: 0}
 --- !u!136 &240865010
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1089,7 +1090,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472144849}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2897,7 +2898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -41.608505, y: -68.41399}
+  m_AnchoredPosition: {x: -41.6084, y: -68.41394}
   m_SizeDelta: {x: -743.2883, y: -356.6921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098359881
@@ -3701,6 +3702,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8309896423555944345, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: -8309896423555944345, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: -8309896423555944345, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
     - target: {fileID: -7493596028755563170, guid: 892232aef673f504da6459f06e3d745d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.53
@@ -3729,6 +3742,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: map4
       objectReference: {fileID: 0}
+    - target: {fileID: 2706854094459097269, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 2706854094459097269, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 2706854094459097269, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
     - target: {fileID: 5259921002111593730, guid: 892232aef673f504da6459f06e3d745d, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.83
@@ -3745,6 +3770,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -77.7
       objectReference: {fileID: 0}
+    - target: {fileID: 8163030529554976355, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 8163030529554976355, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 8163030529554976355, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 8343640861828711217, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 8343640861828711217, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
+    - target: {fileID: 8343640861828711217, guid: 892232aef673f504da6459f06e3d745d, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: f4819cf5158ed4e479b4766d6dc349c1, type: 2}
     - target: {fileID: 8523313780154226444, guid: 892232aef673f504da6459f06e3d745d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4208,6 +4257,7 @@ MonoBehaviour:
   bulletSpawn2: {fileID: 208581820}
   currentEnemyTarget: {fileID: 797585547}
   Base: {fileID: 0}
+  laser: {fileID: 0}
   lineRenderer: {fileID: 1481006715}
   laserDistance: 100
   onHitTarget:
@@ -4487,7 +4537,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1505125253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1888524151}
+        m_TargetAssemblyTypeName: UIInterface, Assembly-CSharp
+        m_MethodName: CloseTurretMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1505125253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5885,7 +5947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb02306e5140654db85bc292fba3042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketTurret: {fileID: 919132149155446097, guid: 1286573434576b143bae018f737d7b49, type: 3}
+  rocketTurret: {fileID: 1165280993}
   gattlingTurret: {fileID: 1995261071}
   turretMenu: {fileID: 1098359879}
 --- !u!114 &1888524152
@@ -5970,6 +6032,7 @@ MonoBehaviour:
   bulletSpawn2: {fileID: 0}
   currentEnemyTarget: {fileID: 0}
   Base: {fileID: 0}
+  laser: {fileID: 0}
   lineRenderer: {fileID: 0}
   laserDistance: 100
   onHitTarget:
