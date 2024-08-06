@@ -7,6 +7,7 @@ public class UIInterface : MonoBehaviour {
 
     public GameObject rocketTurret;
     public GameObject gattlingTurret;
+    public GameObject flamerTurret;
     public GameObject turretMenu;
     GameObject focusObj;
     private GameObject itemPrefab;
@@ -27,7 +28,12 @@ public class UIInterface : MonoBehaviour {
         CreateItemforButton();
 
     }
+    public void CreateFlamer()
+    {
+        itemPrefab= flamerTurret;
+        CreateItemforButton();
 
+    }
     public void CloseTurretMenu()
     {
         turretMenu.SetActive(false);
