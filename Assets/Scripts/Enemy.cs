@@ -16,6 +16,4 @@ public class Enemy : MonoBehaviour
     public float distance = 100f;
     public float fieldOfView = 100f;
     public Vector3 targetDirection;
-
-
 }

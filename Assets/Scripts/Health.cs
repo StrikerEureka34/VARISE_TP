@@ -9,8 +9,7 @@ public class Health : TowerBase
 {
     int maxHealth = 100;
     public float currentHealth;
-    public int points = 0; 
-
+    public int points = 0;
 
     [SerializeField] PlayerType playerType;
 
@@ -98,9 +97,16 @@ public class Health : TowerBase
         } 
         else if (playerType == PlayerType.Enemy) 
         {
-            points += 10;
+            /*points = points+10;
+            Debug.Log("points=" + points);*/
             Destroy(gameObject);
 
         }
+    }
+
+    private void OnDestroy()
+    {
+        points = points + 10;
+        Debug.Log("points=" + points);
     }
 }

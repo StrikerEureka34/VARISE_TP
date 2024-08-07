@@ -619,10 +619,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361d437503e8a9e4f86e81a62dbc2f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 0}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 0}
   health: {fileID: 0}
+  towerRange: 200
   shoot: {fileID: 0}
 --- !u!136 &240865010
 CapsuleCollider:
@@ -830,13 +832,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde474e163ff11c48bc304132adee658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 1418516608}
   enemy: {fileID: 797585555}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 0}
+  towerRange: 200
   bulletSpawn1: {fileID: 1751281940}
   bulletSpawn2: {fileID: 2035580713}
-  currentEnemyTarget: {fileID: 1418516608}
 --- !u!65 &266253015
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1789,6 +1792,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 0
@@ -2782,10 +2791,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361d437503e8a9e4f86e81a62dbc2f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585555}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 797585548}
+  towerRange: 200
   shoot: {fileID: 845811028}
 --- !u!136 &682231223
 CapsuleCollider:
@@ -3177,10 +3188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585555}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 1535841213}
+  towerRange: 200
   shotTimer: 0
 --- !u!136 &786754837
 CapsuleCollider:
@@ -3289,6 +3302,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 1
@@ -3306,10 +3325,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585555}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 1535841213}
+  towerRange: 200
   shotTimer: 0
 --- !u!65 &797585551
 BoxCollider:
@@ -4160,7 +4181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &942805771
 Transform:
   m_ObjectHideFlags: 0
@@ -5167,6 +5188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 1
@@ -5184,10 +5211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 1452048216}
   tower1: {fileID: 266253014}
   tower2: {fileID: 0}
   health: {fileID: 0}
+  towerRange: 200
   shotTimer: 0
 --- !u!1 &1365643154
 GameObject:
@@ -5415,10 +5444,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361d437503e8a9e4f86e81a62dbc2f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585555}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 797585548}
+  towerRange: 200
   shoot: {fileID: 845811028}
 --- !u!1 &1418516608 stripped
 GameObject:
@@ -5442,6 +5473,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 1
@@ -5459,10 +5496,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585555}
   tower1: {fileID: 266253014}
   tower2: {fileID: 0}
   health: {fileID: 0}
+  towerRange: 200
   shotTimer: 0
 --- !u!1 &1452048214
 GameObject:
@@ -5537,6 +5576,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 1
@@ -5554,10 +5599,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 1452048216}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 1535841213}
+  towerRange: 200
   shotTimer: 0
 --- !u!65 &1452048219
 BoxCollider:
@@ -5647,12 +5694,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283cd697fb734c043a473fa290db22a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 797585547}
   enemy: {fileID: 0}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 1481006714}
   health: {fileID: 0}
+  towerRange: 200
   bulletSpawn2: {fileID: 208581820}
-  currentEnemyTarget: {fileID: 797585547}
   Base: {fileID: 0}
   laser: {fileID: 0}
   lineRenderer: {fileID: 1481006715}
@@ -5950,6 +5998,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 0
@@ -6299,12 +6353,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283cd697fb734c043a473fa290db22a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 797585547}
   enemy: {fileID: 1452048216}
   tower1: {fileID: 266253014}
   tower2: {fileID: 1652208258}
   health: {fileID: 797585548}
+  towerRange: 200
   bulletSpawn2: {fileID: 1686200883}
-  currentEnemyTarget: {fileID: 797585547}
   Base: {fileID: 1535841210}
   laser: {fileID: 905570820}
   lineRenderer: {fileID: 1652208263}
@@ -7550,6 +7605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketTurret: {fileID: 919132149155446097, guid: 1286573434576b143bae018f737d7b49, type: 3}
   gattlingTurret: {fileID: 0}
+  flamerTurret: {fileID: 0}
   turretMenu: {fileID: 0}
 --- !u!114 &1888524152
 MonoBehaviour:
@@ -7701,13 +7757,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde474e163ff11c48bc304132adee658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 797585547}
   enemy: {fileID: 0}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 1481006714}
   health: {fileID: 0}
+  towerRange: 200
   bulletSpawn1: {fileID: 0}
   bulletSpawn2: {fileID: 0}
-  currentEnemyTarget: {fileID: 797585547}
 --- !u!4 &2003419342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9448e39aa3e826a46bd476a1ad49dc10, type: 3}

@@ -12,13 +12,10 @@ public class ShootManager1 : TowerBase
         if (enemy.shotTimer1 > 1.6f)
         {
             if (CanBeSeen1())
-            {
-
-                Debug.Log("Hi from cbs1");
-                    tower1.Shoot1();
-                    shoot.Play();
-                    enemy.shotTimer1 = 0;
-                
+            { 
+                tower1.Shoot1();
+                shoot.Play();
+                enemy.shotTimer1 = 0;
             }
         }
         enemy.shotTimer2 += Time.deltaTime;
@@ -26,57 +23,56 @@ public class ShootManager1 : TowerBase
         {
             if (CanBeSeen2())
             {
-                
-                    tower1.Shoot2();
-                    shoot.Play();
-                    enemy.shotTimer2 = 0;
-                
+                tower1.Shoot2();
+                shoot.Play();
+                enemy.shotTimer2 = 0;
             }
         }
     }
     public bool CanBeSeen1()
     {
-        if (gameObject != null)
+        if (currentEnemyTarget != null)
         {
-            if (Vector3.Distance(enemy.barrel1.transform.position, transform.position) < enemy.sightDistance)
+            if (Vector3.Distance(tower1.barrel1.transform.position, currentEnemyTarget.transform.position) < tower1.sightDistance)
             {
-                enemy.targetDirection = enemy.barrel1.transform.position - transform.position;
-                float angleToEnemy = Vector3.Angle(enemy.targetDirection, transform.forward);
-                if (angleToEnemy >= (enemy.fieldOfView*-1) && angleToEnemy <= enemy.fieldOfView)
+                Vector3 targetDirection = tower1.barrel1.transform.position - currentEnemyTarget.transform.position;
+                float angleToEnemy = Vector3.Angle(targetDirection, tower1.transform.forward);
+                if (angleToEnemy >= (tower1.fieldOfView * -1) && angleToEnemy <= tower1.fieldOfView)
                 {
-                    Ray ray = new Ray(enemy.barrel1.transform.position, -enemy.targetDirection);
+                    Ray ray = new Ray(tower1.barrel1.transform.position, -targetDirection);
                     RaycastHit hitInfo = new RaycastHit();
-                    //Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
-                    if (Physics.Raycast(ray, out hitInfo, enemy.sightDistance))
+                    if (Physics.Raycast(ray, out hitInfo, tower1.sightDistance))
                     {
                         if (hitInfo.transform.gameObject.tag == "enemy")
                         {
-                            Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
+                            //Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
                             return true;
                         }
                     }
                 }
             }
         }
+       
         return false;
     }
     public bool CanBeSeen2()
     {
-        if (gameObject != null)
+        if (currentEnemyTarget != null)
         {
-            if (Vector3.Distance(enemy.barrel2.transform.position, transform.position) < enemy.sightDistance)
+            if (Vector3.Distance(tower1.barrel2.transform.position, currentEnemyTarget.transform.position) < tower1.sightDistance)
             {
-                enemy.targetDirection = enemy.barrel2.transform.position - transform.position;
-                float angleToEnemy = Vector3.Angle(enemy.targetDirection, transform.forward);
-                if (angleToEnemy >= -enemy.fieldOfView && angleToEnemy <= enemy.fieldOfView)
+                Vector3 targetDirection = tower1.barrel2.transform.position - currentEnemyTarget.transform.position;
+                float angleToEnemy = Vector3.Angle(targetDirection, tower1.transform.forward);
+                if (angleToEnemy >= (tower1.fieldOfView * -1) && angleToEnemy <= tower1.fieldOfView)
                 {
-                    Ray ray = new Ray(enemy.barrel2.transform.position, -enemy.targetDirection);
+                    Ray ray = new Ray(tower1.barrel2.transform.position, -targetDirection);
                     RaycastHit hitInfo = new RaycastHit();
-                    if (Physics.Raycast(ray, out hitInfo, enemy.sightDistance))
+                    //Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
+                    if (Physics.Raycast(ray, out hitInfo, tower1.sightDistance))
                     {
                         if (hitInfo.transform.gameObject.tag == "enemy")
                         {
-                            //Debug.DrawRay(ray.origin, ray.direction * sightDistance, Color.blue);
+                            Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
                             return true;
                         }
                     }

@@ -38,7 +38,7 @@ public class Tower2 : TowerBase
         {
             Vector3 targetPos = currentEnemyTarget.transform.position - transform.position;
             float angle = Vector3.SignedAngle(transform.up, targetPos, transform.forward);
-            transform.Rotate(0f, 0f, (angle * -1) / 70);
+            transform.Rotate(0f, 0f, (angle * -1) / 90);
 
 
 
@@ -59,7 +59,7 @@ public class Tower2 : TowerBase
             if (Physics.Raycast(ray, out hitInfo, laserDistance))
             {
                 //Debug.Log("damage");
-                health.TakeDamage(.5f);
+                health.TakeDamage(.2f);
                 laser.Play();
             }
         }
