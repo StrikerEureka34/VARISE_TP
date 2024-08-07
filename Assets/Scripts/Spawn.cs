@@ -18,7 +18,8 @@ public class Spawn : MonoBehaviour {
 
     void Spawner() {
 
-        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        GameObject enemy = Instantiate(Resources.Load("Prefabs/Tank") as GameObject, transform.position, Quaternion.identity);
+        //GameObject bullet = GameObject.Instantiate(Resources.Load("Prefabs/Bullet02") as GameObject, currentEnemyTarget.transform.position, Quaternion.identity);
         enemy.GetComponent<FindHome>().destination = homeLocation;
         count++;
         if (count >= maxCount) CancelInvoke("Spawner");

@@ -6,8 +6,12 @@ using UnityEngine;
 public class ShootManager2 : TowerBase
 {
     public float shotTimer;
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
+
+        if (enemy == null) return;
+
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hitInfo = new RaycastHit();
         if (Physics.Raycast(ray, out hitInfo, enemy.distance))

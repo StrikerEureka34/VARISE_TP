@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class Health : TowerBase
 {
     int maxHealth = 100;
     public float currentHealth;
     public int points = 0; 
+
 
     [SerializeField] PlayerType playerType;
 
@@ -17,19 +19,33 @@ public class Health : MonoBehaviour
     private int chipSpeed;
     private float lerpTimer;
 
+    //public GameObject currentEnemyTarget;
     public enum PlayerType
     {
         Base,
         Enemy
     }
+    /*private void Awake()
+    {
+        Collider[] colliders = Physics.OverlapSphere(towerPosition, towerRange);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                Enemy enemy = collider.GetComponent<Enemy>();
+                // Do something with the enemy
+            }
+        }
+    }*/
 
     private void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void Update()
+    protected override void Update()
     {
+        base.Update();  
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
         //UpdateHealthUI();
     }
@@ -64,11 +80,13 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth = currentHealth - damage;
-        UpdateHealthUI();
+        //Debug.Log(currentHealth);
+        //UpdateHealthUI();
 
         if (currentHealth <= 0)
         {
             Die();
+            //currentEnemyTarget
         }
     }
 
@@ -82,6 +100,7 @@ public class Health : MonoBehaviour
         {
             points += 10;
             Destroy(gameObject);
+
         }
     }
 }
