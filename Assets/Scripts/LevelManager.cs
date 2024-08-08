@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour {
     void Start()
     {
 
-        Time.timeScale = 5;
+        Time.timeScale = 1;
         GameObject[] spawnP = GameObject.FindGameObjectsWithTag("spawn");
         spawnPoints=new Spawn[spawnP.Length];
         for (int i=0;i<spawnP.Length;i++)
@@ -28,6 +28,10 @@ public class LevelManager : MonoBehaviour {
         }
     }
 
+    public static void onSpeedchange(int speed)
+    {
+        Time.timeScale=speed;
+    }
     public static void RemoveEnemy() {
 
         totalEnemies--;

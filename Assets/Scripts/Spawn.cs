@@ -66,4 +66,10 @@ public class Spawn : MonoBehaviour
         count++;
         if (count >= maxCount) CancelInvoke("Spawner");
     }
+<<<<<<< Updated upstream
 }
+=======
+}
+
+
+>>>>>>> Stashed changes

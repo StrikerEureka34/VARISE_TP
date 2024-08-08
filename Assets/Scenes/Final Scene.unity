@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bf4cbabd96f904b98c1bc2e1615c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4044387474588096467, guid: 031c5f90ce48919419c8337238cdc91d, type: 3}
+  enemyPrefab: {fileID: 4044387474588096467, guid: 6db90953633fb2948b67321fb26189cc, type: 3}
   homeLocation: {fileID: 2135117594}
   startDelay: 5
   spawnRate: 0.75
@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bf4cbabd96f904b98c1bc2e1615c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 535317580}
+  enemyPrefab: {fileID: 2840650592130896379, guid: edb8ee7efb97ad64caaf62954c81756a, type: 3}
   homeLocation: {fileID: 2135117594}
   startDelay: 1
   spawnRate: 3
@@ -3121,11 +3121,6 @@ PrefabInstance:
 --- !u!4 &535317579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7514419171451090383, guid: 457cd34b254727c4da71bd80038e2ae7, type: 3}
-  m_PrefabInstance: {fileID: 535317578}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &535317580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7134621829415202677, guid: 457cd34b254727c4da71bd80038e2ae7, type: 3}
   m_PrefabInstance: {fileID: 535317578}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &551444170
@@ -3446,9 +3441,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketTurret: {fileID: 919132149155446097, guid: 1286573434576b143bae018f737d7b49, type: 3}
+<<<<<<< Updated upstream
   gattlingTurret: {fileID: 0}
   flamerTurret: {fileID: 0}
   turretMenu: {fileID: 0}
+=======
+  gattlingTurret: {fileID: 1517223880}
+  flamerTurret: {fileID: 960920340}
+  turretMenu: {fileID: 1626047495}
+  WaveText: {fileID: 473353785}
+  slowSpeed: {fileID: 0}
+  mediumSpeed: {fileID: 0}
+  fastSpeed: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!114 &606736790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7233,7 +7238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bf4cbabd96f904b98c1bc2e1615c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4044387474588096467, guid: 031c5f90ce48919419c8337238cdc91d, type: 3}
+  enemyPrefab: {fileID: 0}
   homeLocation: {fileID: 2135117594}
   startDelay: 2
   spawnRate: 0.5
