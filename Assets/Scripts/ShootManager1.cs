@@ -9,7 +9,7 @@ public class ShootManager1 : TowerBase
     {
         base.Update();  
         enemy.shotTimer1 += Time.deltaTime;
-        if (enemy.shotTimer1 > 1.6f)
+        if (enemy.shotTimer1 > .6f)
         {
             if (CanBeSeen1())
             { 
@@ -19,7 +19,7 @@ public class ShootManager1 : TowerBase
             }
         }
         enemy.shotTimer2 += Time.deltaTime;
-        if (enemy.shotTimer2 > 1.6f)
+        if (enemy.shotTimer2 > .6f)
         {
             if (CanBeSeen2())
             {
@@ -72,7 +72,7 @@ public class ShootManager1 : TowerBase
                     {
                         if (hitInfo.transform.gameObject.tag == "enemy")
                         {
-                            Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
+                            //Debug.DrawRay(ray.origin, ray.direction * 50, Color.red);
                             return true;
                         }
                     }

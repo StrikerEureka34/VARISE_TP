@@ -9,7 +9,8 @@ public class Health : TowerBase
 {
     int maxHealth = 100;
     public float currentHealth;
-    public int points = 0;
+    public GameObject pointObj;
+    private PointsManager pointManager;
 
     [SerializeField] PlayerType playerType;
 
@@ -18,28 +19,18 @@ public class Health : TowerBase
     private int chipSpeed;
     private float lerpTimer;
 
+
     //public GameObject currentEnemyTarget;
     public enum PlayerType
     {
         Base,
         Enemy
     }
-    /*private void Awake()
-    {
-        Collider[] colliders = Physics.OverlapSphere(towerPosition, towerRange);
-        foreach (Collider collider in colliders)
-        {
-            if (collider.gameObject.CompareTag("Enemy"))
-            {
-                Enemy enemy = collider.GetComponent<Enemy>();
-                // Do something with the enemy
-            }
-        }
-    }*/
 
     private void Start()
     {
         currentHealth = maxHealth;
+        pointManager = pointObj.GetComponent<PointsManager>();
     }
 
     protected override void Update()
@@ -106,7 +97,6 @@ public class Health : TowerBase
 
     private void OnDestroy()
     {
-        points = points + 10;
-        Debug.Log("points=" + points);
+        pointManager.Points();
     }
 }

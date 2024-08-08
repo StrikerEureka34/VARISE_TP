@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -16,10 +16,10 @@ public class ShootManager2 : TowerBase
         RaycastHit hitInfo = new RaycastHit();
         if (Physics.Raycast(ray, out hitInfo, enemy.distance))
         {
-            //Debug.DrawRay(ray.origin, ray.direction * enemy.distance, Color.cyan);
+            Debug.DrawRay(ray.origin, ray.direction * enemy.distance, Color.cyan);
             if (hitInfo.transform.gameObject.tag == "Base")
             {
-                //Debug.DrawRay(ray.origin, ray.direction * enemy.distance, Color.yellow);
+                Debug.DrawRay(ray.origin, ray.direction * enemy.distance, Color.yellow);
                 shotTimer += Time.deltaTime;
                 if (shotTimer > .5f)
                 { 
@@ -29,4 +29,4 @@ public class ShootManager2 : TowerBase
             }
         }
     }
-}
+}*/

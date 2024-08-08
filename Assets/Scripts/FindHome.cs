@@ -15,11 +15,11 @@ public class FindHome : MonoBehaviour {
 
     void Update() {
 
-        if (ai.remainingDistance < 0.5f && ai.hasPath) {
+        if (ai.remainingDistance < 1.5f && ai.hasPath) {
 
             LevelManager.RemoveEnemy();
             ai.ResetPath();
-            Destroy(this.gameObject, 0.1f);
+            Destroy(this.gameObject, 0.01f);
         }
     }
 }

@@ -822,8 +822,11 @@ GameObject:
   - component: {fileID: 4044387474581229087}
   - component: {fileID: 3245471656945444305}
   - component: {fileID: 3245471656945444318}
+  - component: {fileID: -5045226095424574102}
+  - component: {fileID: -7753934085262346236}
+  - component: {fileID: -7899824806140149500}
   m_Layer: 0
-  m_Name: Goober
+  m_Name: Goob
   m_TagString: goob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -902,6 +905,69 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &-5045226095424574102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044387474588096467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7753934085262346236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044387474588096467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: -7753934085262346236}
+  towerRange: 200
+  currentHealth: 0
+  pointObj: {fileID: 0}
+  playerType: 1
+  frontHealthBar: {fileID: 0}
+  backHealthBar: {fileID: 0}
+--- !u!114 &-7899824806140149500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044387474588096467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
+  shotTimer: 0
 --- !u!1 &4044387474588096469
 GameObject:
   m_ObjectHideFlags: 0

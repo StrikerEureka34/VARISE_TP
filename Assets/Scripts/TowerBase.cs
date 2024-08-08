@@ -18,7 +18,7 @@ public abstract class TowerBase : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere(towerPosition, towerRange);
             foreach (Collider collider in colliders)
             {
-                if (collider.gameObject != null && collider.gameObject.CompareTag("enemy") || collider.gameObject.CompareTag("goob"))
+                if (collider.gameObject != null && (collider.gameObject.CompareTag("enemy") || collider.gameObject.CompareTag("goob")))
                 {
                     currentEnemyTarget = collider.gameObject;
                     /*health.points += 10;
@@ -26,6 +26,7 @@ public abstract class TowerBase : MonoBehaviour
                 }
             }
         }
+
     }
 }
 

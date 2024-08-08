@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8047587163243905438}
   - component: {fileID: 758936992921838635}
   - component: {fileID: -9047989448992668318}
-  - component: {fileID: 5037265830102988235}
+  - component: {fileID: 5220370706524221860}
   m_Layer: 0
   m_Name: Tank
   m_TagString: enemy
@@ -196,7 +196,7 @@ MonoBehaviour:
   health: {fileID: 0}
   towerRange: 200
   shotTimer: 0
---- !u!114 &5037265830102988235
+--- !u!114 &5220370706524221860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,10 +212,10 @@ MonoBehaviour:
   enemy: {fileID: 0}
   tower1: {fileID: 0}
   tower2: {fileID: 0}
-  health: {fileID: 5037265830102988235}
+  health: {fileID: 5220370706524221860}
   towerRange: 200
   currentHealth: 0
-  points: 0
+  pointObj: {fileID: 0}
   playerType: 1
   frontHealthBar: {fileID: 0}
   backHealthBar: {fileID: 0}
