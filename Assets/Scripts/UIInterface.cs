@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,6 +10,8 @@ public class UIInterface : MonoBehaviour {
     public GameObject gattlingTurret;
     public GameObject flamerTurret;
     public GameObject turretMenu;
+    public TMPro.TMP_Text WaveText; 
+
     GameObject focusObj;
     private GameObject itemPrefab;
 
@@ -50,8 +53,9 @@ public class UIInterface : MonoBehaviour {
     }
 
 
-    void Update() {
-
+    void Update()
+    {
+        WaveText.text = LevelManager.wavesEmitted + "  of  " + LevelManager.numberOfWaves;
 
         if (Input.GetMouseButtonDown(0)) {
 
