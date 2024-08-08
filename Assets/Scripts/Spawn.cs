@@ -13,12 +13,18 @@ public class Spawn : MonoBehaviour {
 
     void Start() {
 
+        //InvokeRepeating("Spawner", startDelay, spawnRate);
+        Restart();
+    }
+    public void Restart()
+    {
+        count = 0;
         InvokeRepeating("Spawner", startDelay, spawnRate);
     }
-
     void Spawner() {
 
-        GameObject enemy = Instantiate(Resources.Load("Prefabs/Tank") as GameObject, transform.position, Quaternion.identity);
+        //GameObject enemy = Instantiate(Resources.Load("Prefabs/Tank") as GameObject, transform.position, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
         enemy.GetComponent<FindHome>().destination = homeLocation;
         count++;
         if (count >= maxCount) CancelInvoke("Spawner");

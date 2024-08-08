@@ -581,10 +581,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361d437503e8a9e4f86e81a62dbc2f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585550}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 0}
   health: {fileID: 0}
+  towerRange: 200
   shoot: {fileID: 0}
 --- !u!136 &240865010
 CapsuleCollider:
@@ -1090,7 +1092,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472144849}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1286,6 +1288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 0
@@ -1643,7 +1651,7 @@ MonoBehaviour:
   homeLocation: {fileID: 2135595234}
   startDelay: 1
   spawnRate: 3
-  maxCount: 5
+  maxCount: 3
 --- !u!65 &650084372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2061,6 +2069,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 1
@@ -2078,10 +2092,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585550}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 1481006714}
   health: {fileID: 0}
+  towerRange: 200
   shotTimer: 0
 --- !u!114 &797585550
 MonoBehaviour:
@@ -4392,6 +4408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70ed59bac4ae647ac31bc26b861d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
+  enemy: {fileID: 0}
+  tower1: {fileID: 0}
+  tower2: {fileID: 0}
+  health: {fileID: 0}
+  towerRange: 200
   currentHealth: 0
   points: 0
   playerType: 1
@@ -4409,10 +4431,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a505058bb9606e4c860ff08ccede52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 797585550}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 1481006714}
   health: {fileID: 0}
+  towerRange: 200
   shotTimer: 0
 --- !u!114 &1418516615
 MonoBehaviour:
@@ -4536,12 +4560,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283cd697fb734c043a473fa290db22a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 797585547}
   enemy: {fileID: 797585550}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 1481006714}
   health: {fileID: 0}
+  towerRange: 200
   bulletSpawn2: {fileID: 208581820}
-  currentEnemyTarget: {fileID: 797585547}
   Base: {fileID: 0}
   laser: {fileID: 0}
   lineRenderer: {fileID: 1481006715}
@@ -6051,7 +6076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1761299104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6067,8 +6092,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 4044387474588096467, guid: 031c5f90ce48919419c8337238cdc91d, type: 3}
   homeLocation: {fileID: 2135595234}
   startDelay: 5
-  spawnRate: 0.75
-  maxCount: 5
+  spawnRate: 1
+  maxCount: 3
 --- !u!65 &1761299105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6398,12 +6423,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283cd697fb734c043a473fa290db22a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 0}
   enemy: {fileID: 0}
   tower1: {fileID: 0}
   tower2: {fileID: 1902700332}
   health: {fileID: 0}
+  towerRange: 200
   bulletSpawn2: {fileID: 0}
-  currentEnemyTarget: {fileID: 0}
   Base: {fileID: 0}
   laser: {fileID: 0}
   lineRenderer: {fileID: 0}
@@ -6604,13 +6630,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde474e163ff11c48bc304132adee658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEnemyTarget: {fileID: 797585547}
   enemy: {fileID: 797585550}
   tower1: {fileID: 2003419341}
   tower2: {fileID: 1481006714}
   health: {fileID: 0}
+  towerRange: 200
   bulletSpawn1: {fileID: 0}
   bulletSpawn2: {fileID: 0}
-  currentEnemyTarget: {fileID: 797585547}
+  barrel1: {fileID: 0}
+  barrel2: {fileID: 0}
+  sightDistance: 200
+  fieldOfView: 100
 --- !u!4 &2003419342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9448e39aa3e826a46bd476a1ad49dc10, type: 3}
@@ -7545,7 +7576,7 @@ Transform:
   m_GameObject: {fileID: 2135595233}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.54, y: -15.390063, z: 2.22}
+  m_LocalPosition: {x: 30.54, y: -15.33, z: 2.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
