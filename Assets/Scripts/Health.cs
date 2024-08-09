@@ -37,7 +37,7 @@ public class Health : TowerBase
     {
         base.Update();  
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-        UpdateHealthUI();
+        //UpdateHealthUI();
     }
     public void UpdateHealthUI()
     {
