@@ -84,10 +84,10 @@ public class UIInterface : MonoBehaviour {
 
              focusObj = Instantiate(cubeTurret, hit.point, cubeTurret.transform.rotation);
              focusObj.GetComponent<Collider>().enabled = false;*/
-            
+            if (EventSystem.current.IsPointerOverGameObject()) return;
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (EventSystem.current.IsPointerOverGameObject()) return;
+            
             if (Physics.Raycast(ray, out hit)
                 && hit.collider.gameObject.CompareTag("turret"))
             {

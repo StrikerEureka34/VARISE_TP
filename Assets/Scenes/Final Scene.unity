@@ -1396,7 +1396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &330363499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2950,8 +2950,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020689022, y: 0.01753956, z: 0.013513095}
-  m_Center: {x: 0, y: 0.00876978, z: 0.00028481602}
+  m_Size: {x: 0.02654541, y: 0.020583719, z: 0.013513094}
+  m_Center: {x: 0.000105543135, y: 0.008769347, z: 0.00028481602}
 --- !u!1 &512705248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3474,8 +3474,11 @@ MonoBehaviour:
   rocketTurret: {fileID: 919132149155446097, guid: 1286573434576b143bae018f737d7b49, type: 3}
   gattlingTurret: {fileID: 142102365}
   flamerTurret: {fileID: 706202055}
-  turretMenu: {fileID: 330363498}
+  turretMenu: {fileID: 1626047495}
   WaveText: {fileID: 473353785}
+  slowSpeed: {fileID: 0}
+  mediumSpeed: {fileID: 0}
+  fastSpeed: {fileID: 0}
 --- !u!114 &606736790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4298,7 +4301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &847054114
 Transform:
   m_ObjectHideFlags: 0
@@ -7327,7 +7330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 606736789}
         m_TargetAssemblyTypeName: UIInterface, Assembly-CSharp
         m_MethodName: CloseTurretMenu
         m_Mode: 1
