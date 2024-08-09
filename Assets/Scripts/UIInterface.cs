@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIInterface : MonoBehaviour {
 
@@ -9,13 +10,33 @@ public class UIInterface : MonoBehaviour {
     public GameObject gattlingTurret;
     public GameObject flamerTurret;
     public GameObject turretMenu;
+    public TMPro.TMP_Text WaveText;
     GameObject focusObj;
     private GameObject itemPrefab;
+    public Button slowSpeed;
+    public Button mediumSpeed;
+    public Button fastSpeed;
 
     void Start() {
+        slowSpeed.onClick.AddListener(SlowSpeedClicked);
+        mediumSpeed.onClick.AddListener(MediumSpeedClicked);
+        fastSpeed.onClick.AddListener(FastSpeedClicked);
 
     }
+    void SlowSpeedClicked()
+    {
+        LevelManager.onSpeedchange(1);
+    }
 
+    void MediumSpeedClicked()
+    {
+        LevelManager.onSpeedchange(5);
+    }
+
+    void FastSpeedClicked()
+    {
+        LevelManager.onSpeedchange(7);
+    }
     public void CreateRocket()
     {
         itemPrefab = rocketTurret;
@@ -51,7 +72,8 @@ public class UIInterface : MonoBehaviour {
 
 
     void Update() {
-
+        if (LevelManager.wavesEmitted < LevelManager.numberOfWaves)
+            WaveText.text = (LevelManager.wavesEmitted + 1) + "  of  " + LevelManager.numberOfWaves;
 
         if (Input.GetMouseButtonDown(0)) {
 
