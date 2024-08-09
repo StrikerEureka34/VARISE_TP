@@ -12,13 +12,15 @@ public class Tower1 : TowerBase
     public GameObject barrel2;
     public GameObject dir;
 
-    public float sightDistance = 500f;
+    public float sightDistance = 800f;
     public float fieldOfView = 100f;
     private RaycastHit hitInfo;
     private RaycastHit hitInfo1;
     private RaycastHit hitInfo2;
     public Ray ray1;
     public Ray ray2;
+
+
     protected override void Update()
     {
         base.Update();
@@ -41,12 +43,14 @@ public class Tower1 : TowerBase
     }
     public void Shoot1()
     {
+        Vector3 shootDirection1 = -(bulletSpawn1.transform.position - currentEnemyTarget.transform.position).normalized;
+        ray1 = new Ray(bulletSpawn1.transform.position, shootDirection1 * sightDistance);
         if (Physics.Raycast(ray1, out hitInfo))
         {
             if (hitInfo.collider.gameObject.CompareTag("enemy") || (hitInfo.collider.gameObject.CompareTag("goob")))
             {
                 Debug.Log("Shoot1");
-                Vector3 shootDirection1 = -(bulletSpawn1.transform.position - currentEnemyTarget.transform.position).normalized;
+                shootDirection1 = -(bulletSpawn1.transform.position - currentEnemyTarget.transform.position).normalized;
                 ray1 = new Ray(bulletSpawn1.transform.position, shootDirection1);
                 enemy.shotTimer1 += Time.deltaTime;
                 GameObject bullet1 = GameObject.Instantiate(Resources.Load("Prefabs/Bullet01") as GameObject, bulletSpawn1.transform.position, dir.transform.rotation);
@@ -54,14 +58,17 @@ public class Tower1 : TowerBase
             }
         }
     }
-           
+    
+
     public void Shoot2()
     {
+        Vector3 shootDirection2 = -(bulletSpawn1.transform.position - currentEnemyTarget.transform.position).normalized;
+        ray2 = new Ray(bulletSpawn1.transform.position, shootDirection2 * sightDistance);
         if (Physics.Raycast(ray2, out hitInfo))
         {
             if (hitInfo.collider.gameObject.CompareTag("enemy") || (hitInfo.collider.gameObject.CompareTag("goob")))
             {
-                Vector3 shootDirection2 = -(bulletSpawn2.transform.position - currentEnemyTarget.transform.position).normalized;
+                shootDirection2 = -(bulletSpawn2.transform.position - currentEnemyTarget.transform.position).normalized;
                 ray2 = new Ray(bulletSpawn2.transform.position, shootDirection2);
                 enemy.shotTimer2 += Time.deltaTime;
                 GameObject bullet2 = GameObject.Instantiate(Resources.Load("Prefabs/Bullet01") as GameObject, bulletSpawn2.transform.position, dir.transform.rotation);

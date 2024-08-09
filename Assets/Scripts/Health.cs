@@ -16,7 +16,7 @@ public class Health : TowerBase
 
     public Image frontHealthBar;
     public Image backHealthBar;
-    private int chipSpeed;
+    private float chipSpeed = 2f;
     private float lerpTimer;
 
 
@@ -37,7 +37,7 @@ public class Health : TowerBase
     {
         base.Update();  
         currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-        //UpdateHealthUI();
+        UpdateHealthUI();
     }
     public void UpdateHealthUI()
     {
@@ -52,7 +52,7 @@ public class Health : TowerBase
             backHealthBar.color = Color.red;
             lerpTimer += Time.deltaTime;
             float percentComplete = lerpTimer/chipSpeed;
-            //percentComplete = percentComplete * percentComplete;
+            percentComplete = percentComplete * percentComplete;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, lerpTimer, percentComplete);
         }
         if (fillF < hFraction)

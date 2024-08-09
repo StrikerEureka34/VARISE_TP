@@ -59,7 +59,7 @@ public class Tower2 : TowerBase
             if (Physics.Raycast(ray, out hitInfo, laserDistance))
             {
                 //Debug.Log("damage");
-                health.TakeDamage(.7f);
+                health.TakeDamage(.2f);
                 laser.Play();
             }
         }
