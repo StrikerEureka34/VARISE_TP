@@ -9,7 +9,7 @@ public class Health : TowerBase
 {
     int maxHealth = 100;
     public float currentHealth;
-    public GameObject pointObj;
+    public Transform pointObj;
     private PointsManager pointManager;
 
     [SerializeField] PlayerType playerType;

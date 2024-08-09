@@ -2934,7 +2934,7 @@ MonoBehaviour:
   health: {fileID: 0}
   towerRange: 200
   currentHealth: 0
-  pointObj: {fileID: 312820066}
+  pointObj: {fileID: 312820067}
   playerType: 1
   frontHealthBar: {fileID: 1800440431}
   backHealthBar: {fileID: 1151398766}
