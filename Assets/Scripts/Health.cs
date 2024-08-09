@@ -75,6 +75,7 @@ public class Health : TowerBase
 
         if (currentHealth <= 0)
         {
+            Debug.Log("0 health");
             Die();
             //currentEnemyTarget
         }
@@ -84,19 +85,21 @@ public class Health : TowerBase
     {
         if (playerType == PlayerType.Base)
         {
+            Debug.Log("death");
             SceneManager.LoadScene(0);
         } 
         else if (playerType == PlayerType.Enemy) 
         {
             /*points = points+10;
             Debug.Log("points=" + points);*/
-            Destroy(gameObject);
 
+            Destroy(gameObject);
+            pointManager.Points();
         }
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         pointManager.Points();
-    }
+    }*/
 }
