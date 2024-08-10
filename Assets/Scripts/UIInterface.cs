@@ -16,6 +16,7 @@ public class UIInterface : MonoBehaviour {
     public Button slowSpeed;
     public Button mediumSpeed;
     public Button fastSpeed;
+    private GameObject selectedTurret;
 
     void Start() {
         slowSpeed.onClick.AddListener(SlowSpeedClicked);
@@ -59,6 +60,12 @@ public class UIInterface : MonoBehaviour {
     {
         turretMenu.SetActive(false);
     }
+    public void DestroyTurret()
+    {
+        Destroy(selectedTurret);
+        turretMenu.SetActive(false);
+    }
+
     void CreateItemforButton()
     {
         RaycastHit hit;
@@ -93,6 +100,8 @@ public class UIInterface : MonoBehaviour {
             {
                 turretMenu.transform.position = Input.mousePosition;
                 turretMenu.SetActive(true);
+                selectedTurret = hit.collider.gameObject;
+
             }
         } else if (focusObj && Input.GetMouseButton(0)) {
 
